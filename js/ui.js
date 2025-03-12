@@ -49,24 +49,36 @@ export class UI {
       </div>`;
     }
 
+    toggleAnimation(){
+        const image=document.querySelector(".info img");
+
+        image.classList.toggle("animate");
+    }
+
     renderPlayer(song){
-        console.log(song);
+        
         this.player.innerHTML=` 
         <div class="info">
-        <img src="" alt="">
+        <img src="${song.image}" alt="">
         <div>
-            <h5>Duman</h5>
-            <p>bgdsbj</p>
+            <h5>${song.title}</h5>
+            <p>${song.subtitle}</p>
         </div>
     </div>
 
-    <audio controls src=""></audio>
+    <audio controls autoplay src="${song.mp3}"></audio>
 
     <div class="icons">
         <i class="bi bi-music-note-list"></i>
         <i class="bi bi-boombox"></i>
         <i class="bi bi-pc-display"></i>
     </div>`;
+
+    const audio=document.querySelector('audio');
+    
+    audio.addEventListener("play", this.toggleAnimation);
+    audio.addEventListener("pause", this.toggleAnimation);
+
     }
 }
 
