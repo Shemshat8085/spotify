@@ -11,7 +11,7 @@ export class API{
     async getPopuler() {
               try {
       
-      const response = await fetch('https://shazam.p.rapidapi.com/search?term=duman',options);
+      const response = await fetch('https://shazam.p.rapidapi.com/search?term=sezen',options);
 
       const data=await response.json();
 
